@@ -1,120 +1,117 @@
-# 🌈 ESP32 Mood Lamp with Servo & Touch Control
+# 🌈 ESP32 Mood Lamp + Servo Control (MicroPython)
 
-A **smart mood lamp** built using an **ESP32**, **NeoPixel RGB LEDs**, and a **servo motor**, controllable via **touch input** or a **web interface** (including a color picker).  
-The ESP32 hosts its own Wi-Fi hotspot and webpage — no internet connection required!
+This project turns your ESP32 into a **Wi-Fi hotspot** that hosts a web-based control panel for:
+- Changing RGB NeoPixel colors using a **color wheel** 🎨  
+- Controlling a **servo motor** smoothly between open and close positions 🔄  
+- Toggling light ON/OFF 💡  
+- Long-press touch input to turn off light 🔘  
 
 ---
 
-## ✨ Features
+## 🧠 Features
 
-- 🕹️ **Touch Sensor Control**
-  - Short touch → Toggles the servo and light.
-  - Long touch → Turns off the light.
-
-- 💡 **Smooth Servo Motion**
-  - Servo moves smoothly between open and closed positions.
-
-- 🌈 **RGB Mood Light**
-  - Fully controllable via a web-based **color picker**.
-  - Option to toggle ON/OFF.
-
+- 🔥 **Captive portal-like behavior** — automatically resolves DNS queries to `192.168.4.1`
 - 🌐 **Built-in Wi-Fi Access Point**
-  - Connect your phone directly to `ESP32_HaazMoodlamp`.
-  - No external Wi-Fi needed.
-  - Fake DNS server auto-redirects to the control page (`http://192.168.4.1`).
+  - SSID: `ESP32_HaazMoodlamp`
+  - Password: `12345678`
+- 🎨 **Web Interface**
+  - Live RGB color picker
+  - Buttons for servo and light control
+- 🤖 **Smooth servo motion**
+- 🖐 **Touch button control**
+  - Short press → Toggle servo + light ON
+  - Long press (>1.5s) → Turn off light
+- 💡 **NeoPixel support** for up to 32 LEDs
 
 ---
 
-## ⚙️ Hardware Setup
+## ⚙️ Hardware Connections
 
-| Component | Pin | Description |
-|------------|-----|-------------|
-| Servo | GPIO 0 | Controls servo position |
-| Touch Sensor | GPIO 1 | Detects short or long press |
-| NeoPixel LED Strip | GPIO 21 | 32 RGB LEDs |
-| ESP32 | — | Runs Wi-Fi AP, DNS & Web Server |
+| Component        | Pin (ESP32) | Description         |
+|------------------|-------------|---------------------|
+| Servo Motor      | GPIO 0      | PWM control signal  |
+| Touch Sensor     | GPIO 1      | Input for touch     |
+| NeoPixel Strip   | GPIO 21     | RGB data pin        |
+| Power Supply     | 5V + GND    | Shared with all devices |
 
----
-
-## 🧠 How It Works
-
-1. **ESP32 starts a Wi-Fi hotspot** named `ESP32_HaazMoodlamp` (password: `12345678`).
-2. A **fake DNS server** redirects all connections to `192.168.4.1`.
-3. When you open any site, the **web interface** appears automatically.
-4. You can:
-   - Toggle light ON/OFF.
-   - Move the servo.
-   - Pick any RGB color from the color wheel.
+> ⚠️ Make sure to use an external 5V power source for servo + NeoPixels to avoid brownouts.
 
 ---
 
-## 🌐 Web Interface
+## 📲 How to Use
 
-- Access the lamp by connecting to:
-  ```
-  Wi-Fi: ESP32_HaazMoodlamp
-  Password: 12345678
-  URL: http://192.168.4.1
-  ```
+1. Flash the provided MicroPython script to your **ESP32** using **Thonny** or **ampy**.  
+2. Once flashed, reboot the ESP32.
+3. Connect your phone or laptop to the Wi-Fi network:
 
-- Control options:
-  - **Toggle (Servo + Light)** – turns on the light and moves the servo.
-  - **Turn Light OFF** – shuts down the light.
-  - **Toggle Servo Only** – moves the servo without affecting the light.
-  - **Color Picker** – change NeoPixel color dynamically.
-
----
-
-## 🧩 Dependencies
-
-Make sure your **MicroPython firmware** supports:
-- `_thread`
-- `neopixel`
-- `network`
-- `machine`
-- `socket`
-- `time`
-- `struct`
-
-Flash the MicroPython firmware onto your ESP32 using **Thonny** or **esptool.py**.
-
----
-
-## 🚀 Installation Steps
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/<your-username>/ESP32-MoodLamp.git
    ```
-2. Open `main.py` in **Thonny**.
-3. Connect your ESP32 board.
-4. Click **Run** (▶️) or **Upload to /flash**.
-5. Connect your phone to the Wi-Fi `ESP32_HaazMoodlamp`.
-6. Open `http://192.168.4.1` to control your lamp.
+   SSID: ESP32_HaazMoodlamp
+   Password: 12345678
+   ```
+
+4. Open your browser and go to:
+   ```
+   http://192.168.4.1
+   ```
+
+5. Use the web controls to:
+   - Toggle servo movement
+   - Turn light ON/OFF
+   - Adjust the LED color with the color wheel
 
 ---
 
-## 🎨 Demo
+## 🌈 Web Interface Preview
 
-| Feature | Description |
-|----------|-------------|
-| 💡 Color Control | Change colors instantly from the web UI |
-| 🔄 Smooth Servo | Gradual motion for realistic movement |
-| 🧠 Touch Input | Dual-mode touch for toggling light/servo |
-
-*(You can add photos or GIFs here of your working setup.)*
-
----
-
-## 🛠️ Future Improvements
-
-- Add brightness control slider  
-- Store last color in non-volatile memory (NVS)  
-- Add animations (rainbow, breathing, etc.)  
-- Integrate with Telegram for remote control  
+The web interface includes:
+- Buttons:
+  - “Toggle (Servo + Light ON)”
+  - “Turn Light OFF”
+  - “Toggle Servo Only”
+- RGB Color Wheel:
+  - Instantly updates the NeoPixel color.
 
 ---
 
-## 📜 License
+## 🧩 File Overview
 
-This project is licensed under the **MIT License** — feel free to use and modify it.
+| File | Description |
+|------|--------------|
+| `main.py` | Main MicroPython program for ESP32 (includes Wi-Fi, servo, LED, and web server logic) |
+| `README.md` | This documentation file |
+
+---
+
+## 🧰 Dependencies
+
+- MicroPython (latest build for ESP32)
+- Libraries:
+  - `machine`
+  - `neopixel`
+  - `_thread`
+  - `network`
+  - `socket`
+  - `time`
+  - `struct`
+
+---
+
+## 🚀 Future Improvements
+
+- Add brightness control slider
+- Add presets for color moods
+- Enable OTA updates for easier firmware upgrades
+
+---
+
+## 🧑‍💻 Author
+
+**Haaziq Raif**  
+Created using ESP32 SuperMini C3 with MicroPython  
+For educational and IoT experimentation 🌍
+
+---
+
+## 📝 License
+
+MIT License — free for modification and use.
