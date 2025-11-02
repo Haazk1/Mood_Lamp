@@ -64,6 +64,8 @@ This project turns your ESP32 into a **Wi-Fi hotspot** that hosts a web-based co
    - Toggle servo movement
    - Turn light ON/OFF
    - Adjust the LED color with the color wheel
+   - Adjust  brightness using control slider
+   
 
 ---
 
@@ -104,10 +106,9 @@ The web interface includes:
 
 ## 🚀 Future Improvements
 
-- Add brightness control slider
-- Add presets for color moods
-- Enable OTA updates for easier firmware upgrades
 
+- Enable OTA updates for easier firmware upgrades
+- Add presets for color moods
 ---
 
 ## 🧑‍💻 Author
@@ -120,4 +121,4 @@ For educational and IoT experimentation 🌍
 
 ## 📝 License
 
-MIT License — free for modification and use.
+Feel free to use and modify
