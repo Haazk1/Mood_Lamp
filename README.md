@@ -4,6 +4,10 @@
 
 
 
+https://github.com/user-attachments/assets/7df755ba-183c-41ee-971e-18b6a3c5d00b
+
+
+
 This project turns your ESP32 into a **Wi-Fi hotspot** that hosts a web-based control panel for:
 - Changing RGB NeoPixel colors using a **color wheel** 🎨  
 - Controlling a **servo motor** smoothly between open and close positions 🔄  
