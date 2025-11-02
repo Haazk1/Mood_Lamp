@@ -1,6 +1,7 @@
 # 🌈 ESP32 Mood Lamp + Servo Control (MicroPython)
 
-![WhatsApp Image 2025-11-02 at 20 06 22_5507eee8](https://github.com/user-attachments/assets/e22a4b9c-cee3-4951-87cc-31d4348f103e)
+<img src="https://github.com/user-attachments/assets/e22a4b9c-cee3-4951-87cc-31d4348f103e" alt="WhatsApp Image" width="300">
+
 
 
 This project turns your ESP32 into a **Wi-Fi hotspot** that hosts a web-based control panel for:
