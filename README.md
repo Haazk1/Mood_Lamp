@@ -27,6 +27,8 @@ This project turns your ESP32 into a **Wi-Fi hotspot** that hosts a web-based co
 
 ## ⚙️ Hardware Connections
 
+<img width="3000" height="2346" alt="circuit_image" src="https://github.com/user-attachments/assets/b5122c32-5327-4189-b1fa-3a53a2b9631f" />
+
 | Component        | Pin (ESP32) | Description         |
 |------------------|-------------|---------------------|
 | Servo Motor      | GPIO 0      | PWM control signal  |
