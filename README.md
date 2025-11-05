@@ -2,10 +2,10 @@
 
 <img src="https://github.com/user-attachments/assets/e22a4b9c-cee3-4951-87cc-31d4348f103e" alt="WhatsApp Image" width="300">
 
-<p align="center">
+<div align="center" style="display: flex; justify-content: center; gap: 10px;">
   <video src="https://github.com/user-attachments/assets/7df755ba-183c-41ee-971e-18b6a3c5d00b" width="45%" controls></video>
   <video src="https://github.com/user-attachments/assets/346f4d84-1831-438e-9086-24329e00f488" width="45%" controls></video>
-</p>
+</div>
 
 
 
