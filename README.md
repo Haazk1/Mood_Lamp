@@ -2,16 +2,7 @@
 
 <img src="https://github.com/user-attachments/assets/e22a4b9c-cee3-4951-87cc-31d4348f103e" alt="WhatsApp Image" width="300">
 
-<p align="center">
-  <a href="https://github.com/user-attachments/assets/7df755ba-183c-41ee-971e-18b6a3c5d00b">
-    <img src="https://github.com/user-attachments/assets/e22a4b9c-cee3-4951-87cc-31d4348f103e" width="45%">
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://github.com/user-attachments/assets/346f4d84-1831-438e-9086-24329e00f488">
-    <img src="https://github.com/user-attachments/assets/e22a4b9c-cee3-4951-87cc-31d4348f103e" width="45%">
-  </a>
-</p>
-
+https://github.com/user-attachments/assets/7df755ba-183c-41ee-971e-18b6a3c5d00b https://github.com/user-attachments/assets/346f4d84-1831-438e-9086-24329e00f488
 
 
 This project turns your ESP32 into a **Wi-Fi hotspot** that hosts a web-based control panel for:
